@@ -1,0 +1,44 @@
+.slider * {
+    box-sizing: border-box;
+}
+
+.slider {
+    display: block;
+    height: 100%;
+}
+
+.slider .slide {
+    margin: 0;
+    height: 100%;
+    display: table;
+}
+
+.slider .slide img,
+.slider .slide figcaption {
+    float: left;
+    width: 50%;
+    max-height: 100%;
+}
+
+.slider .slide img {
+    object-fit: cover;
+    object-position: center;
+}
+
+.slider .slide figcaption {
+    padding: 40px;
+}
+
+.calltoaction {
+    margin: 40px;
+}
+
+.controlbox {
+    position: relative;
+    top: -50%;
+    width: 100%;
+}
+
+.btn_next {
+    float: left;
+}

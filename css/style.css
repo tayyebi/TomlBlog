@@ -1,0 +1,143 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-size: 20px;
+}
+
+html {
+    background-color: darkgray;
+    background-image: url('../img/ep_naturalblack.png');
+}
+
+a {
+    white-space: nowrap;
+}
+
+body {}
+
+.header {
+    background: none;
+    color: white;
+    padding-bottom: 5px;
+}
+
+.header h1 {
+    font-size: inherit;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.versions {
+    font-size: 10px;
+}
+
+.versions a {
+    margin-left: 10px;
+}
+
+.content {
+    margin: 0 auto 0 auto;
+    display: grid;
+    grid-template-areas: 'fullscreen fullscreen' 'main main' 'footer footer';
+    grid-gap: 10px;
+}
+
+.content .fullscreen {
+    visibility: hidden;
+    grid-area: fullscreen;
+    position: absolute;
+    padding: 0px;
+    width: 25px;
+    height: 25px;
+    margin: 2px;
+    right: +40px;
+    content: '';
+    color: transparent;
+    background-color: white;
+    background-image: url('../img/fullscreen.png');
+    background-size: 90% 90%;
+    background-position: center center;
+    border: none;
+}
+
+.main {
+    overflow-y: auto;
+    grid-area: main;
+    background-color: white;
+}
+
+.footer {
+    grid-area: footer;
+    width: 100%;
+    border-top: 1px solid #c4c4c4;
+    background-color: white;
+}
+
+.footer .logo {
+    width: 10%;
+    padding: 15px;
+    margin: 0 auto 0 auto;
+    display: block;
+}
+
+.footer .links {
+    width: 90%;
+    text-align: center;
+}
+
+.footer .links ul {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    align-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.footer .links ul li {
+    flex: 1 0 10%;
+    max-width: 200px;
+    text-align: center;
+    /* explanation below */
+}
+
+.footer .links ul li a {
+    display: block;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin: 5px;
+    margin-top: 0px;
+}
+
+
+/* Desktops and laptops ----------- */
+
+@media only screen and (min-width: 1000px) {
+    body {
+        font-size: 10px;
+        background-image: url('../img/toranj.svg');
+        background-size: 60% auto;
+        background-repeat: no-repeat;
+        padding-right: 70px;
+        padding-left: 70px;
+    }
+    .content {
+        border-radius: 5px;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.97);
+        height: 90%;
+    }
+    .content .fullscreen {
+        visibility: visible;
+    }
+    .footer .logo {
+        width: 30px;
+        float: left;
+    }
+    .footer .links {
+        float: left;
+    }
+}

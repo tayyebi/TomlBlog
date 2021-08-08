@@ -1,0 +1,8 @@
+.main {
+    direction: ltr;
+    text-align: left;
+}
+
+.main article {
+    margin: 10px;
+}
