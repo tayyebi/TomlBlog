@@ -26,17 +26,19 @@ class BlogController extends Controller
     }
 
 
-    function PostGET($inp = '')
+    function PostGET($inp = '', ...$args)
     {
-        if ($inp == '') throw new NotFoundException();
+        $file = _Blog . $inp . '/' . implode('/',$args);
+
+        if ($file == '') throw new NotFoundException();
 
         if (
-            pathinfo($inp, PATHINFO_EXTENSION) != 'html'
-            and pathinfo($inp, PATHINFO_EXTENSION) != 'htm'
+            pathinfo($file, PATHINFO_EXTENSION) != 'html'
+            and pathinfo($file, PATHINFO_EXTENSION) != 'htm'
         ) {
-            $this->RedirectResponse(_Blog . $inp);
+            $this->RedirectResponse($file);
         } else {
-            $content = file_get_contents(_Blog . $inp);
+            $content = file_get_contents($file);
             $this->Render('Post', [
                 'Title' => _AppName . ' >> Blog',
                 'Content' => $content

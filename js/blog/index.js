@@ -1,12 +1,10 @@
 function navclicked() {
     var $sender = $(window.event.target);
-    console.log($sender);
 
     var li = $sender;
     var ul = li.find(">ul");
 
     var url = root + 'Blog/Nav/' + li.find(">span.pointer").html().trim();
-    console.log(url);
 
     if (!li.hasClass("loaded"))
         $.getJSON(url, function(data) {
